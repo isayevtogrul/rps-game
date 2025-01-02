@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.score {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 15px;
+    min-width: 120px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.score:hover {
+    transform: translateY(-5px);
+}
+
+.score p {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.score span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.choices {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.choice {
+    font-size: 2.5rem;
+    width: 80px;
+    height: 80px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.choice:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.choice:active {
+    transform: scale(0.95);
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.choice-display {
+    font-size: 3rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    min-width: 100px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#vs {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+#message {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 1.5rem 0;
+    min-height: 2em;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.reset-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+
+.reset-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255,107,107,0.4);
+}
+
+.reset-button:active {
+    transform: translateY(-1px);
+}
+
+.win-animation {
+    animation: win 0.5s ease;
+}
+
+.choice-animation {
+    animation: choose 0.3s ease;
+}
+
+@keyframes win {
+    0% { transform: scale(1); }
+    50% { 
+        transform: scale(1.2);
+        box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+    100% { transform: scale(1); }
+}
+
+@keyframes choose {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9) rotate(10deg); }
+    100% { transform: scale(1); }
+}
+
+/* Tablet üçün responsiv dizayn */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .score {
+        min-width: 100px;
+    }
+
+    .choice {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+
+    .choice-display {
+        font-size: 2.5rem;
+        min-width: 80px;
+    }
+}
+
+/* Mobil üçün responsiv dizayn */
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .score-board {
+        gap: 1rem;
+    }
+
+    .score {
+        min-width: 80px;
+        padding: 0.8rem;
+    }
+
+    .score p {
+        font-size: 0.9rem;
+    }
+
+    .score span {
+        font-size: 1.5rem;
+    }
+
+    .choices {
+        gap: 1rem;
+    }
+
+    .choice {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+
+    .choice-display {
+        font-size: 2rem;
+        min-width: 70px;
+        padding: 0.8rem;
+    }
+
+    #message {
+        font-size: 1.2rem;
+    }
+
+    .reset-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
