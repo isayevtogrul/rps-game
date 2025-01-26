@@ -1,7 +1,7 @@
-Bu layihə istifadəçinin kompüterə qarşı "Daş, Kağız, Qayçı" oyunu oynaya biləcəyi bir JavaScript əsaslı interaktiv oyundur.
+This project is an interactive JavaScript-based game where the user can play “Rock, Paper, Scissors” against the computer.
 
-## Xüsusiyyətlər
-- İstifadəçi seçimləri ilə animasiyalar
-- Təsadüfi kompüter seçimi
-- Səslərin oynadılması (qalibiyyət və məğlubiyyət)
-- Qalib müəyyən olunduqdan sonra təkrar oynamaq seçimi
+Features
+	•	Animations for user choices
+	•	Random computer selection
+	•	Playback of victory sound
+	•	Option to replay after a winner is determined
